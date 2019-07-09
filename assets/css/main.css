@@ -62,10 +62,11 @@ a {
   color: blue; }
 
 /* header and footer areas */
-header .bg-dark .flex-between p {
+header .bg-dark .flex-between p, a {
   margin: 1rem 0;
-  line-height: 1.5em;
-  font-family: helvetica neue,Helvetica,Arial,sans-serif; }
+  line-height: 0;
+  font-family: helvetica neue,Helvetica,Arial,sans-serif;
+  color: #FFF; }
 
 .menu {
   padding: 0;
@@ -255,7 +256,7 @@ section {
 .bg-dark {
   background-color: #384745;
   position: relative; }
-  .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6, .bg-dark p, .bg-dark a {
+  .bg-dark > h1, .bg-dark > h2, .bg-dark > h3, .bg-dark > h4, .bg-dark > h5, .bg-dark > h6, .bg-dark > p, .bg-dark > a {
     color: #FFF; }
   .bg-dark .angle {
     position: absolute;

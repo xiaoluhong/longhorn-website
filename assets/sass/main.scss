@@ -90,10 +90,11 @@ a {
 }
 
 /* header and footer areas */
-header .bg-dark .flex-between p {
+header .bg-dark .flex-between p, a {
   margin: 1rem 0;
-  line-height: 1.5em;
+  line-height: 0;
   font-family: helvetica neue,Helvetica,Arial,sans-serif;
+  color: $light;
 }
 
 .menu {
@@ -375,7 +376,7 @@ section {
 .bg-dark {
   background-color: $dark;
   position: relative;
-  h1, h2, h3, h4, h5, h6, p, a {
+  > h1, > h2, > h3, > h4, > h5, > h6, > p, > a {
     color: $light;
   }
 

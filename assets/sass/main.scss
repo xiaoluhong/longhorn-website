@@ -1,9 +1,9 @@
 $body-font       : 'Roboto', sans-serif;
 $header-font     : 'Poppins', sans-serif;
-$primary-color   : #B036AF;
+$primary-color   : #815794;
 $secondary-color : #CDE35C;
 $dark            : #384745;
-$light           : #F3F3F3;
+$light           : #FFF;
 
 
 * {
@@ -277,7 +277,7 @@ section {
 
 .wrap {
   box-sizing: border-box;
-  width: 75%;
+  width: 80%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -294,17 +294,17 @@ section {
     align-items: center;
   }
 
-  &:after {
-    content: "";
-    background-image: url(../img/cables.svg);
-    background-repeat: no-repeat;
-    height: 683px;
-    width: 100%;
-    position: absolute;
-    bottom: -15px;
-    opacity: .5;
-    z-index: -1;
-  }
+  // &:after {
+  //   content: "";
+  //   background-image: url(../img/cables.svg);
+  //   background-repeat: no-repeat;
+  //   height: 683px;
+  //   width: 100%;
+  //   position: absolute;
+  //   bottom: -15px;
+  //   opacity: .5;
+  //   z-index: -1;
+  // }
 }
 
 .half {
@@ -374,8 +374,24 @@ section {
 
 .bg-dark {
   background-color: $dark;
+  position: relative;
   h1, h2, h3, h4, h5, h6, p, a {
     color: $light;
+  }
+
+  .angle {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+
+    &:first-child {
+      top: 0;
+      transform: rotate(180deg)
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
   }
 }
 
@@ -556,27 +572,35 @@ section {
     grid-row: 2 / span 4;
     grid-column: 1 / span 6;
     color: white;
+    position: relative;
+
+    .angle {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+    }
   }
 }
 
 //get started
-.get-started {
+.call-to-action {
   display: grid;
   grid-template-columns: repeat(6,1fr);
   padding: 0;
   position: relative;
 
-  &:before {
-    content: "";
-    background-image: url(../img/cables.svg);
-    background-repeat: no-repeat;
-    height: 683px;
-    width: 100%;
-    position: absolute;
-    top: -15px;
-    opacity: .75;
-    transform: rotate(180deg);
-  }
+  // &:before {
+  //   content: "";
+  //   background-image: url(../img/cables.svg);
+  //   background-repeat: no-repeat;
+  //   height: 683px;
+  //   width: 100%;
+  //   position: absolute;
+  //   top: -15px;
+  //   opacity: .75;
+  //   transform: rotate(180deg);
+  // }
 
   .white {
     background: white;
@@ -587,13 +611,14 @@ section {
     padding: 5rem;
   }
 
-  .bg-primary {
-    background: $primary-color;
-    grid-row: 5 / span 3;
+  .bg-primary, .bg-dark {
+    grid-row: 4 / span 3;
     grid-column: 1 / span 6;
     color: white;
     padding: 20rem 0 5rem 0;
   }
+
+
 }
 
 //responsive
@@ -678,7 +703,7 @@ section {
   }
 
   //get started
-  .get-started {
+  .call-to-action {
     grid-template-columns: repeat(8,1fr);
 
     .white {

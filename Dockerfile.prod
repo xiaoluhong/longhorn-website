@@ -11,15 +11,15 @@ COPY layouts layouts
 COPY scripts scripts
 COPY content content
 COPY static static
-COPY themes themes
 COPY .git .git
+
+ADD https://github.com/rancherlabs/projects-theme/archive/master.tar.gz /run/master.tar.gz
+RUN mkdir -p /output /run/themes/projects-theme && tar -xzf /run/master.tar.gz -C /run/themes/projects-theme --strip=1 && rm /run/master.tar.gz
 
 RUN ["hugo", "--buildFuture", "--baseURL=https://longhorn.io", "--destination=/output"]
 
 # Make sure something got built
 RUN stat /output/index.html
-
-RUN ["npm","run","build-algolia"]
 
 FROM nginx:alpine
 COPY --from=build /output /usr/share/nginx/html/

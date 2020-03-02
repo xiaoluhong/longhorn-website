@@ -215,7 +215,7 @@ section {
     align-items: center; }
   .intro :after {
     content: "";
-    background-image: url(../img/cables.svg);
+    background-image: url(/longhorn/img/cables.svg);
     background-repeat: no-repeat;
     height: 250px;
     width: 100%;
@@ -375,7 +375,7 @@ section {
   position: relative; }
   .get-started:before {
     content: "";
-    background-image: url(../img/cables.svg);
+    background-image: url(/longhorn/img/cables.svg);
     background-repeat: no-repeat;
     height: 250px;
     width: 100%;
